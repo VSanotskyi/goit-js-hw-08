@@ -13,6 +13,6 @@ player.on(
   }, 1000)
 );
 
-if (localStorage.length !== 0) {
+if (localStorage !== 0) {
   player.setCurrentTime(localStorage.getItem(KEY_TIME));
 }

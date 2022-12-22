@@ -22,7 +22,11 @@ function submitForm(evt) {
 }
 
 function inputForm(evt) {
-  dataForm[evt.target.name] = evt.target.value;
+  dataForm = {
+    email: refs.form.email.value,
+    message: refs.form.message.value,
+  };
+
   const dataJSON = JSON.stringify(dataForm);
   localStorage.setItem(KEY_FORM, dataJSON);
 }
