@@ -14,6 +14,9 @@ populateMessageOutput();
 function submitForm(evt) {
   evt.preventDefault();
 
+  if (dataForm.email || dataForm.message) {
+    console.log(dataForm);
+  }
   evt.currentTarget.reset();
   localStorage.removeItem(KEY_FORM);
 }
@@ -25,10 +28,10 @@ function inputForm(evt) {
 }
 
 function populateMessageOutput() {
-  const savedMessage = JSON.parse(localStorage.getItem(KEY_FORM));
+  const dataForm = JSON.parse(localStorage.getItem(KEY_FORM));
 
-  if (savedMessage) {
-    refs.form.email.value = savedMessage.email;
-    refs.form.message.value = savedMessage.message;
+  if (dataForm) {
+    refs.form.email.value = dataForm.email;
+    refs.form.message.value = dataForm.message;
   }
 }
