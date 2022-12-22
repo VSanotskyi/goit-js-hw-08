@@ -5,7 +5,7 @@ const refs = {
   textarea: document.querySelector('.feedback-form textarea'),
 };
 const KEY_FORM = 'feedback-form-state';
-const dataForm = {};
+let dataForm = {};
 
 refs.form.addEventListener('submit', submitForm);
 refs.form.addEventListener('input', throttle(inputForm, 100));
@@ -28,7 +28,7 @@ function inputForm(evt) {
 }
 
 function populateMessageOutput() {
-  const dataForm = JSON.parse(localStorage.getItem(KEY_FORM));
+  dataForm = JSON.parse(localStorage.getItem(KEY_FORM));
 
   if (dataForm) {
     refs.form.email.value = dataForm.email;

@@ -12,4 +12,7 @@ player.on(
     console.log(localSetTime);
   }, 1000)
 );
-player.setCurrentTime(localStorage.getItem(KEY_TIME));
+
+if (localStorage.length !== 0) {
+  player.setCurrentTime(localStorage.getItem(KEY_TIME));
+}
