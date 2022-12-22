@@ -7,9 +7,9 @@ const refs = {
 const KEY_FORM = 'feedback-form-state';
 const dataForm = {};
 
-populateMessageOutput();
 refs.form.addEventListener('submit', submitForm);
 refs.form.addEventListener('input', throttle(inputForm, 100));
+populateMessageOutput();
 
 function submitForm(evt) {
   evt.preventDefault();
